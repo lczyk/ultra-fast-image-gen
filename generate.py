@@ -92,7 +92,7 @@ def load_input_images(paths, width: int, height: int):
 
 
 def run_zimage_quant(args):
-    from app import load_zimage_pipeline
+    from loaders import load_zimage_pipeline
 
     args.prompt = " ".join(args.prompt)
     device = resolve_device(args.device)
@@ -115,7 +115,7 @@ def run_zimage_quant(args):
 
 
 def run_zimage_full(args):
-    from app import load_zimage_pipeline
+    from loaders import load_zimage_pipeline
 
     args.prompt = " ".join(args.prompt)
     device = resolve_device(args.device)
@@ -316,17 +316,17 @@ def main():
         run_zimage_full(args)
 
     elif args.model == "flux2-4b-int8":
-        from app import load_flux2_klein_pipeline
+        from loaders import load_flux2_klein_pipeline
 
         run_flux2_klein(args, load_flux2_klein_pipeline)
 
     elif args.model == "flux2-4b-sdnq":
-        from app import load_flux2_klein_sdnq_pipeline
+        from loaders import load_flux2_klein_sdnq_pipeline
 
         run_flux2_klein(args, load_flux2_klein_sdnq_pipeline)
 
     elif args.model == "flux2-9b-sdnq":
-        from app import load_flux2_klein_9b_sdnq_pipeline
+        from loaders import load_flux2_klein_9b_sdnq_pipeline
 
         run_flux2_klein(args, load_flux2_klein_9b_sdnq_pipeline)
 
