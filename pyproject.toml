@@ -24,8 +24,8 @@ dependencies = [
     "kernels>=0.11.7",
 ]
 
-[tool.uv]
-dev-dependencies = []
+[dependency-groups]
+dev = []
 
 [tool.uv.sources]
 diffusers = { git = "https://github.com/huggingface/diffusers.git" }
